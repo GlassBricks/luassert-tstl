@@ -1,31 +1,30 @@
 {
-  "name": "busted-tstl",
-  "version": "0.1.2",
-  "description": "TypeScript definitions for the Busted testing suite",
+  "name": "luassert-tstl",
+  "version": "0.1.0",
+  "description": "TypeScript definitions for the luassert",
   "files": [
     "*.d.ts",
     "assertions/*.d.ts"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [
     "lua",
     "typescript",
-    "busted",
+    "luassert",
     "testing"
   ],
   "author": "",
   "license": "ISC",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hazzard993/busted-typescript-declarations.git"
   },
   "bugs": {
-    "url": "https://github.com/hazzard993/busted-typescript-declarations/issues"
+    "url": "https://github.com/GlassBricks/luassert-tstl/issues"
   },
-  "homepage": "https://github.com/hazzard993/busted-typescript-declarations#readme"
+  "homepage": "https://github.com/GlassBricks/luassert-tstl#readme",
+  "peerDependencies": {
+    "typescript-to-lua": "*",
+    "lua-types": "*"
+  }
 }
