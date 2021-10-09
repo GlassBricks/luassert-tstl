@@ -25,9 +25,15 @@ declare namespace assert {
     export const no: typeof assert;
 
     // Modifier permutations
-    export const are_no: typeof assert;
-    export const has_no: typeof assert;
-    export const are_not: typeof assert;
+    export const is_no: typeof assert;
     export const is_not: typeof assert;
+    export const are_no: typeof assert;
+    export const are_not: typeof assert;
+    export const was_no: typeof assert;
+    export const was_not: typeof assert;
+    export const has_no: typeof assert;
+    export const has_not: typeof assert;
+    export const does_no: typeof assert;
+    export const does_not: typeof assert;
 
 }

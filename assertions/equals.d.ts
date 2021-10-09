@@ -3,21 +3,24 @@ declare namespace assert {
 
     /**
      * Uses simple comparison to assert if an expected value equals an actual value.
+     *
+     * [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L112)
      * @param expected The expected value.
      * @param actual The actual value.
      * @param failureDescription Custom message to show on assertion failure.
-     * @param [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L112)
      */
-    export function equals(expected: any, actual: any, failureDescription?: string): boolean;
+    export function equals(expected: unknown, actual: unknown, failureDescription?: string): boolean;
 
     /**
      * Uses simple comparison to assert if an expected value does NOT equal an actual value.
+     *
+     * [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L112)
+     *
      * @param expected The expected value.
      * @param actual The actual value.
      * @param failureDescription Custom message to show on assertion failure.
-     * @param [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L112)
      */
-    export function not_equals(expected: any, actual: any, failureDescription?: string): boolean;
+    export function not_equals(expected: unknown, actual: unknown, failureDescription?: string): boolean;
 
     export const equal: typeof equals;
     export const not_equal: typeof not_equals;

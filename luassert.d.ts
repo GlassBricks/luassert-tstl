@@ -8,23 +8,15 @@ declare namespace mock {
     export function revert(toRevert: object): void;
 }
 
-declare type ValueTest = (value: any, failureDescription?: string) => void;
+declare type ValueTest = (value: unknown, failureDescription?: string) => void;
 declare type BinaryTest<T> = (expected: T, actual: T, failureDescription?: string) => void;
 
 declare namespace assert {
     export function has_property(property: string, table: object): void;
 
-    // Spy
-    export function spy(s: Function): {
-        was: SpyAssertion;
-        was_not: SpyAssertion;
-    };
+    export function spy(s: Function): SpyAssertion
 
-    // Stub
-    export function stub(s: Function): {
-        was: SpyAssertion;
-        was_not: SpyAssertion;
-    };
+    export function stub(s: Function): SpyAssertion
 }
 
 interface SpyAssertion {
@@ -49,6 +41,10 @@ interface SpyAssertion {
     called_at_most: SpyAssertion["called"];
     called_more_than: SpyAssertion["called"];
     called_less_than: SpyAssertion["called"];
+
+    was: SpyAssertion;
+    was_not: SpyAssertion;
+    not: SpyAssertion;
 }
 
 interface Spy {
@@ -95,5 +91,5 @@ declare const spy: {
     /**
      * Returns whether or not the specified value is a spy.
      */
-    is_spy(this: void, value: any): value is Spy;
+    is_spy(this: void, value: unknown): value is Spy;
 };
