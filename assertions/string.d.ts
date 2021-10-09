@@ -8,7 +8,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function string(value: unknown, failureDescription?: string): boolean;
+    export function string(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that the given value is not a string.
@@ -17,7 +17,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_string(value: unknown, failureDescription?: string): boolean;
+    export function not_string(value: unknown, failureDescription?: string): void;
 
     export const is_string: typeof string;
     export const is_not_string: typeof not_string;

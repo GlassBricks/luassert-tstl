@@ -8,7 +8,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function thread(value: unknown, failureDescription?: string): boolean;
+    export function thread(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that the given value is not a thread.
@@ -17,7 +17,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_thread(value: unknown, failureDescription?: string): boolean;
+    export function not_thread(value: unknown, failureDescription?: string): void;
 
     export const is_thread: typeof thread;
     export const is_not_thread: typeof not_thread;

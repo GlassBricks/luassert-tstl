@@ -8,7 +8,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function table(value: unknown, failureDescription?: string): boolean;
+    export function table(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that the given value is not a table.
@@ -17,7 +17,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_table(value: unknown, failureDescription?: string): boolean;
+    export function not_table(value: unknown, failureDescription?: string): void;
 
     export const is_table: typeof table;
     export const is_not_table: typeof not_table;

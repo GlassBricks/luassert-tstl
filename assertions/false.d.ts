@@ -7,14 +7,14 @@ declare namespace assert {
      * [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L264)
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function False(value: unknown, failureDescription?: string): boolean;
+    export function False(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that a given value is not false.
      * @param failureDescription Custom error message to show on assertion failure.
      * [Function Implementation](https://github.com/Olivine-Labs/luassert/blob/b8fb59ac1eb1a2d59793ee1707ac42f979438e8f/src/assertions.lua#L264)
      */
-    export function not_false(value: unknown, failureDescription?: string): boolean;
+    export function not_false(value: unknown, failureDescription?: string): void;
 
     export const is_false: typeof False;
     export const is_not_false: typeof not_false;

@@ -8,7 +8,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function True(value: unknown, failureDescription?: string): boolean;
+    export function True(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that the given value is not true.
@@ -18,7 +18,7 @@ declare namespace assert {
      * @param value The value to check truthiness for.
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_true(value: unknown, failureDescription?: string): boolean;
+    export function not_true(value: unknown, failureDescription?: string): void;
 
     export const is_true: typeof True;
     export const is_not_true: typeof not_true;

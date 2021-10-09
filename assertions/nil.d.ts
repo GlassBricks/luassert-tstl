@@ -8,7 +8,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function Nil(value: unknown, failureDescription?: string): boolean;
+    export function Nil(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that a given value is NOT nil.
@@ -17,7 +17,7 @@ declare namespace assert {
      *
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_nil(value: unknown, failureDescription?: string): boolean;
+    export function not_nil(value: unknown, failureDescription?: string): void;
 
     export const is_nil: typeof Nil;
     export const is_not_nil: typeof not_nil;

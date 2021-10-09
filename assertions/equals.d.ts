@@ -9,7 +9,7 @@ declare namespace assert {
      * @param actual The actual value.
      * @param failureDescription Custom message to show on assertion failure.
      */
-    export function equals(expected: unknown, actual: unknown, failureDescription?: string): boolean;
+    export function equals(expected: unknown, actual: unknown, failureDescription?: string): void;
 
     /**
      * Uses simple comparison to assert if an expected value does NOT equal an actual value.
@@ -20,7 +20,7 @@ declare namespace assert {
      * @param actual The actual value.
      * @param failureDescription Custom message to show on assertion failure.
      */
-    export function not_equals(expected: unknown, actual: unknown, failureDescription?: string): boolean;
+    export function not_equals(expected: unknown, actual: unknown, failureDescription?: string): void;
 
     export const equal: typeof equals;
     export const not_equal: typeof not_equals;

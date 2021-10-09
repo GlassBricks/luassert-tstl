@@ -10,7 +10,7 @@ declare namespace assert {
      * @param errorExpected The error message expected from the error.
      * @param failureDescription Custom message to show on assertion failure.
      */
-    export function error(func: Function, errorExpected?: string, failureDescription?: string): boolean;
+    export function error(func: Function, errorExpected?: string, failureDescription?: string): void;
 
     /**
      * Calls a function expecting it to not to throw an error.
@@ -21,7 +21,9 @@ declare namespace assert {
      * @param errorExpected The error message expected from the error.
      * @param failureDescription Custom message to show on assertion failure.
      */
-    export function not_error(func: Function, errorExpected?: string, failureDescription?: string): boolean;
+    export function not_error(func: Function, errorExpected?: string, failureDescription?: string): void;
+
+    export function error_matches(func: Function, pattern: string, from?: number, plain?: boolean): void;
 
     export const is_error: typeof error;
     export const is_not_error: typeof not_error;

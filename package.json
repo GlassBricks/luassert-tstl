@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/GlassBricks/luassert-tstl#readme",
   "peerDependencies": {
-    "typescript-to-lua": "*",
-    "lua-types": "*"
+    "typescript-to-lua": "*"
+  },
+  "devDependencies": {
+    "typescript-to-lua": "^1.0.1"
   }
 }

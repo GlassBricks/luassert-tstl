@@ -9,7 +9,7 @@ declare namespace assert {
      * @param value The value to check truthiness for.
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function truthy(value: unknown, failureDescription?: string): boolean;
+    export function truthy(value: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that a given value is falsy.
@@ -19,7 +19,7 @@ declare namespace assert {
      * @param value The value to check truthiness for.
      * @param failureDescription Custom error message to show on assertion failure.
      */
-    export function not_truthy(value: unknown, failureDescription?: string): boolean;
+    export function not_truthy(value: unknown, failureDescription?: string): void;
 
     export const is_truthy: typeof truthy;
     export const is_not_truthy: typeof not_truthy;

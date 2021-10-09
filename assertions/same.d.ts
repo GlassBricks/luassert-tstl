@@ -10,7 +10,7 @@ declare namespace assert {
      * @param actual The actual value.
      * @param failureDescription The error message to display on failure.
      */
-    export function same(expected: unknown, actual: unknown, failureDescription?: string): boolean;
+    export function same(expected: unknown, actual: unknown, failureDescription?: string): void;
 
     /**
      * Asserts that two values are NOT the same. Can deeply compare tables.
@@ -21,7 +21,7 @@ declare namespace assert {
      * @param actual The actual value.
      * @param failureDescription The error message to display on failure.
      */
-    export function not_same(expected: unknown, actual: unknown, failureDescription?: string): boolean;
+    export function not_same(expected: unknown, actual: unknown, failureDescription?: string): void;
 
     export const is_same: typeof same;
     export const is_not_same: typeof not_same;
