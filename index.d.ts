@@ -19,5 +19,5 @@ import "./assertions/true";
 import "./assertions/truthy";
 import "./assertions/unique";
 import "./assertions/userdata";
-import "./busted";
+import "./luassert";
 import "./modifiers";
