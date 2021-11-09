@@ -1,6 +1,5 @@
 // Typescript definitions for Busted
-// Project: https://github.com/hazzard993/busted-tstl
-// Definitions by: hazzard993 <https://github.com/hazzard993>
+// Project: https://github.com/GlassBricks/luassert-tstl
 
 /// <reference types="typescript-to-lua/language-extensions" />
 /// <reference path="array.d.ts" />
