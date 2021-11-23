@@ -43,12 +43,12 @@ declare namespace spy {
 
     /** @noSelf */
     interface SpyAssertion extends AssertChaining {
-        returned_with(arguments: any[], level?: number): void;
+        returned_with(arguments: unknown, level?: number): void;
 
         /**
          * Checks every time the spied upon function has been called for the specified parameters.
          */
-        called_with(...arguments: any[]): void;
+        called_with(...arguments: unknown[]): void;
 
         /**
          * Whether or not the spied upon function has been called.
