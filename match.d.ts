@@ -64,8 +64,8 @@ declare namespace match {
   type Match = assert.Fluent<MatchCreator> & {
     /** A matcher that matches any value. */
     readonly _: Matcher;
-    is_matcher(a: unknown): a is Matcher;
-    is_ref_matcher(a: unknown): boolean;
+    is_matcher(this: void, a: unknown): a is Matcher;
+    is_ref_matcher(this: void, a: unknown): boolean;
   };
 }
 declare var match: match.Match;

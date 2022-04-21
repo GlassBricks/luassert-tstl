@@ -30,9 +30,12 @@ declare namespace assert {
     [P in keyof T as P extends string ? Phrases<P> : never]: T[P];
   } & Chaining;
 
+  /** @noSelf */
   interface Assert extends Fluent<Assertions> {
-    <V>(value: V): Exclude<V, undefined | null | false>;
-    <A extends any[]>(...args: A): LuaMultiReturn<A>;
+    <V>(v: V): Exclude<V, undefined | null | false>;
+    <V, A extends any[]>(v: V, ...args: A): LuaMultiReturn<
+      [Exclude<V, undefined | null | false>, ...A]
+    >;
   }
 }
 

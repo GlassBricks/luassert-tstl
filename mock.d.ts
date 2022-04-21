@@ -1,3 +1,4 @@
+/** @noSelfInFile */
 /** Mocks a table. All functions, deeply searched, are stubbed. */
 declare function mock<T extends object>(
   table: T,
@@ -9,6 +10,7 @@ declare function mock<T extends object>(
   doStub?: boolean
 ): mock.Mocked<T>;
 
+/** @noSelf */
 declare namespace mock {
   type Stubbed<T> = {
     [P in keyof T]: T[P] extends Function
