@@ -32,8 +32,8 @@ declare namespace assert {
 
   /** @noSelf */
   interface Assert extends Fluent<Assertions> {
-    <V>(v: V): Exclude<V, undefined | null | false>;
-    <V, A extends any[]>(v: V, ...args: A): LuaMultiReturn<
+    <V>(this: void, v: V): Exclude<V, undefined | null | false>;
+    <V, A extends any[]>(this: void, v: V, ...args: A): LuaMultiReturn<
       [Exclude<V, undefined | null | false>, ...A]
     >;
   }
