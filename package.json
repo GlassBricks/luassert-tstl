@@ -1,6 +1,6 @@
 {
   "name": "luassert-tstl",
-  "version": "0.2.3",
+  "version": "0.3.0-experimental.1",
   "description": "TypeScript definitions for luassert",
   "files": [
     "*.d.ts",
@@ -24,9 +24,11 @@
   },
   "homepage": "https://github.com/GlassBricks/luassert-tstl#readme",
   "peerDependencies": {
-    "typescript-to-lua": "*"
+    "typescript-to-lua": "^1.0.0"
   },
   "devDependencies": {
-    "typescript-to-lua": "^1.0.1"
+    "lua-types": "^2.11.0",
+    "prettier": "^2.6.2",
+    "typescript-to-lua": "^1.4.3"
   }
 }

@@ -1,46 +1,51 @@
-import Stub = stub.Stub;
-import ReturnValuesOf = stub.ReturnValuesOf;
+/** Creates an empty stub. */
+declare function stub<T extends Function = Function>(): stub.Stub<T>;
 
-declare function stub<F extends Function = Function>(): Stub<F>;
-
+/** Given a table and index, stubs the function at the index. */
 declare function stub<T extends Record<K, Function>, K extends keyof T>(
-    table: T,
-    key: K,
-    ...ret: ReturnValuesOf<T[K]> | [T[K]] | []
-): Stub<T[K]>;
+  table: T,
+  key: K,
+  func?: T[K]
+): stub.Stub<T[K]>;
+declare function stub<T extends Record<K, Function>, K extends keyof T>(
+  table: T,
+  key: K,
+  func: Function
+): stub.Stub<T[K]>;
+declare function stub<T extends Record<K, Function>, K extends keyof T>(
+  table: T,
+  key: K,
+  ...returnVals: spy.ReturnValsAsArgs<T[K]>
+): stub.Stub<T[K]>;
 
 declare namespace stub {
-    type ValueOrMatcher<T> = {
-        [P in keyof T]: T[P] | Matcher
-    }
+  import ReturnValsAsArguments = spy.ReturnValsMatching;
+  /** @noSelf */
+  interface StubSettings<T extends Function> {
+    /** Specifies the return values for the stub. */
+    returns(...values: ReturnValsAsArguments<T>): this;
 
-    type ReturnValuesOf<F> = F extends (...args: any) => infer R
-        ? R extends LuaMultiReturn<infer A>
-            ? A
-            : [R]
-        : never
+    /** Specifies a function to call when the stub is called. */
+    invokes(func: T): this;
+  }
 
-    interface Stub<F extends Function> extends spy.Spy<F>, StubSettings<F> {
-        by_default: StubSettings<F>;
+  /** @noSelf */
+  interface StubObj<T extends Function> extends spy.SpyObj<T>, StubSettings<T> {
+    /** Used to specify the behavior of the stub, by default. */
+    readonly by_default: StubSettings<T>;
 
-        /** @noSelf */
-        on_call_with(
-            ...args: F extends (this: infer T, ...args: infer P) => any
-                ? [T | Matcher, ...ValueOrMatcher<P>]
-                : F extends (...args: infer P) => any
-                    ? ValueOrMatcher<P>
-                    : never[]
-        ): StubSettings<F>;
-    }
+    /** Used to specify the behavior of the stub, when matching the given arguments. */
+    on_call_with(...args: spy.ParameterMatching<T>): StubSettings<T>;
+  }
 
-    /** @noSelf */
-    interface StubSettings<F extends Function> {
-        returns(value: F extends (...args: any) => infer R ? R : any): this;
-
-        invokes(func: F): this;
-    }
+  type Stub<T extends Function> = StubObj<T> & T;
 }
 
-declare namespace assert {
-    export function stub(stub: stub.Stub<any>): spy.SpyAssertion
+declare namespace Assert {
+  interface Assert {
+    stub<T extends Function>(
+      st: stub.Stub<T>,
+      failureMessage?: string
+    ): spy.SpyAssert<T>;
+  }
 }

@@ -1,11 +1,19 @@
 /** @noSelfInFile */
 
-/** @noSelf */
-interface ArrayAssertion extends AssertChaining {
-    holes(length?: number): void;
-}
-
 declare namespace assert {
-    export function array(arr: any[]): ArrayAssertion
+  /** @noSelf */
+  interface ArrayAssertions {
+    /**
+     * Asserts that the given array has no holes (undefined or null elements).
+     *
+     * @param length The expected length of the array.
+     */
+    holes(length?: number): void;
+  }
+  type ArrayAssert = Fluent<ArrayAssertions>;
+  /** @noSelf */
+  interface Assert {
+    /** Begin assertions on an array. */
+    array(arr: readonly unknown[]): ArrayAssert;
+  }
 }
-
