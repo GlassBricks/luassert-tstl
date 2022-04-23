@@ -1,7 +1,7 @@
 /** @noSelfInFile */
 
 /** Shorthand spy constructor. Creates a spy on a new empty function. */
-declare function spy(): spy.Spy<() => void>;
+declare function spy<T extends Function = () => void>(): spy.Spy<T>;
 /** Shorthand spy constructor. Spies on the specified callable function. */
 declare function spy<T extends Function>(callback: T): spy.Spy<T>;
 
@@ -95,10 +95,11 @@ declare namespace spy {
     methodName: K
   ): Spy<T[K]>;
 
-  function is_spy(value: unknown): value is Spy<any>;
+  function is_spy(value: unknown): value is Spy<Function>;
 }
 
 declare namespace assert {
+  /** @noSelf */
   interface Assert {
     spy<T extends Function>(
       spy: spy.Spy<T>,
