@@ -1,3 +1,5 @@
+/** @noSelfInFile */
+
 /** Creates an empty stub. */
 declare function stub<T extends Function = Function>(): stub.Stub<T>;
 

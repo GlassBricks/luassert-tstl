@@ -1,6 +1,6 @@
 {
   "name": "luassert-tstl",
-  "version": "0.3.0-experimental.5",
+  "version": "0.3.0-experimental.6",
   "description": "TypeScript definitions for luassert",
   "files": [
     "*.d.ts",

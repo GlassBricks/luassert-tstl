@@ -1,3 +1,5 @@
+/** @noSelfInFile */
+
 declare namespace assert {
   // individual assertion functions are added in other files via declaration merging
   interface Assertions {}
