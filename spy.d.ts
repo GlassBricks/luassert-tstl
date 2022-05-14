@@ -14,7 +14,7 @@ declare namespace spy {
     readonly refs: readonly unknown[];
   }
 
-  /** @noSelf */
+  // WITH self
   interface SpyObj<T extends Function> {
     /** Stops spying reverting the target function back to its original state. */
     revert(): T;
