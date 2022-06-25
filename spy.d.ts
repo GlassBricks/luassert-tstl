@@ -1,7 +1,7 @@
 /** @noSelfInFile */
 
 /** Shorthand spy constructor. Creates a spy on a new empty function. */
-declare function spy<T extends Function = () => void>(): spy.Spy<T>;
+declare function spy<T extends Function = any>(): spy.Spy<T>;
 /** Shorthand spy constructor. Spies on the specified callable function. */
 declare function spy<T extends Function>(callback: T): spy.Spy<T>;
 
