@@ -27,7 +27,7 @@ declare namespace spy {
     /** The parameters called on the function. */
     readonly calls: readonly ArgList[];
     /** The return values of the spied function. */
-    readonly returnvals: readonly unknown[];
+    readonly returnvals: readonly ArgList[];
   }
 
   /** Represents a spied function. */
