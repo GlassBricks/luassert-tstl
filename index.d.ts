@@ -1,7 +1,6 @@
-// Typescript definitions for Busted
 // Project: https://github.com/GlassBricks/luassert-tstl
 
-/// <reference types="typescript-to-lua/language-extensions" />
+/// <reference types="@typescript-to-lua/language-extensions" />
 /// <reference path="array.d.ts" />
 /// <reference path="modifiers.d.ts" />
 /// <reference path="spy.d.ts" />
